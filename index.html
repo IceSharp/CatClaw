@@ -20,7 +20,8 @@
     <!--<h3>h1. Bootstrap heading <small>Secondary text</small></h3>-->
     <div class="row">
         <div class="progress" id="progress1">
-            <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
+            <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
+                 style="width: 20%;">
             </div>
             <span class="progress-type">Overall Progress</span>
             <span class="progress-completed">20%</span>
@@ -177,40 +178,44 @@
                                     <label id="result-h">$0</label> &nbsp <label>kJ/kg</label>
                                 </p>
                             </div>
-                            <form class="form-horizontal" action="data_calc.php" method="GET" id="calc_form">
-                            <ul class="list-group list-group-flush text-center">
-                            <!-- Appended input-->
+                            <form class="form-horizontal" action="thermoprop.php" method="GET" id="calc_h_form">
+                                <ul class="list-group list-group-flush text-center">
+                                    <!-- Appended input-->
 
-                                <div class="controls">
-                                    <li class="list-group-item">
-                                    <div class="input-group">
-                                        <input type="hidden" name="calc_type" value="all">
-                                        <label class="input-group-addon">温度</label>
-                                        <input class="form-control" placeholder="摄氏度" type="text" name="temp" id="temp-h">
-                                        <span class="input-group-addon"> &#8451</span>
+                                    <div class="controls">
+                                        <li class="list-group-item">
+                                            <div class="input-group">
+                                                <!--设定计算类型-->
+                                                <input type="hidden" name="calc_type" value="h">
+                                                <label class="input-group-addon">温度</label>
+                                                <input class="form-control" placeholder="摄氏度" type="text" name="temp"
+                                                       id="temp-h">
+                                                <span class="input-group-addon"> &#8451</span>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="input-group">
+                                                <label class="input-group-addon">压力</label>
+                                                <input class="form-control" placeholder="绝对压力值" type="text" name="press"
+                                                       id="press-h">
+                                                <span class="input-group-addon">MPa.a</span>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="input-group">
+                                                <label class="input-group-addon">干度</label>
+                                                <input class="form-control" placeholder="绝对压力值" type="text" name="press"
+                                                       id="x-h">
+                                                <span class="input-group-addon">%</span>
+                                            </div>
+                                        </li>
                                     </div>
-                                    </li>
-                                    <li class="list-group-item">
-                                    <div class="input-group">
-                                        <label class="input-group-addon">压力</label>
-                                        <input class="form-control" placeholder="绝对压力值" type="text" name="press" id="press-h">
-                                        <span class="input-group-addon">MPa.a</span>
-                                    </div>
-                                    </li>
-                                    <li class="list-group-item">
-                                    <div class="input-group">
-                                        <label class="input-group-addon">干度</label>
-                                        <input class="form-control" placeholder="绝对压力值" type="text" name="press" id="x-h">
-                                        <span class="input-group-addon">%</span>
-                                    </div>
-                                    </li>
+                                </ul>
+                                <br>
+
+                                <div class="panel-footer">
+                                    <a class="btn btn-lg btn-block btn-success" id="calc_h">计算</a>
                                 </div>
-                            </ul>
-                            <br>
-
-                            <div class="panel-footer">
-                                <a class="btn btn-lg btn-block btn-success">计算</a>
-                            </div>
                             </form>
                         </div>
                     </div>
@@ -231,21 +236,24 @@
                                         <div class="input-group">
                                             <input type="hidden" name="calc_type" value="all">
                                             <label class="input-group-addon">温度</label>
-                                            <input class="form-control" placeholder="摄氏度" type="text" name="temp" id="temp-p">
+                                            <input class="form-control" placeholder="摄氏度" type="text" name="temp"
+                                                   id="temp-p">
                                             <span class="input-group-addon"> &#8451</span>
                                         </div>
                                     </li>
                                     <li class="list-group-item">
                                         <div class="input-group">
                                             <label class="input-group-addon">压力</label>
-                                            <input class="form-control" placeholder="绝对压力值" type="text" name="press" id="disabledTextInput" disabled>
+                                            <input class="form-control" placeholder="绝对压力值" type="text" name="press"
+                                                   id="disabledTextInput" disabled>
                                             <span class="input-group-addon">MPa.a</span>
                                         </div>
                                     </li>
                                     <li class="list-group-item">
                                         <div class="input-group">
                                             <label class="input-group-addon">干度</label>
-                                            <input class="form-control" placeholder="绝对压力值" type="text" name="press" id="x-p">
+                                            <input class="form-control" placeholder="绝对压力值" type="text" name="press"
+                                                   id="x-p">
                                             <span class="input-group-addon">%</span>
                                         </div>
                                     </li>
@@ -275,21 +283,24 @@
                                         <div class="input-group">
                                             <input type="hidden" name="calc_type" value="all">
                                             <label class="input-group-addon">温度</label>
-                                            <input class="form-control" placeholder="摄氏度" type="text" name="temp" id="disabledTextInput" disabled>
+                                            <input class="form-control" placeholder="摄氏度" type="text" name="temp"
+                                                   id="disabledTextInput" disabled>
                                             <span class="input-group-addon"> &#8451</span>
                                         </div>
                                     </li>
                                     <li class="list-group-item">
                                         <div class="input-group">
                                             <label class="input-group-addon">压力</label>
-                                            <input class="form-control" placeholder="绝对压力值" type="text" name="press" id="press-t">
+                                            <input class="form-control" placeholder="绝对压力值" type="text" name="press"
+                                                   id="press-t">
                                             <span class="input-group-addon">MPa.a</span>
                                         </div>
                                     </li>
                                     <li class="list-group-item">
                                         <div class="input-group">
                                             <label class="input-group-addon">干度</label>
-                                            <input class="form-control" placeholder="绝对压力值" type="text" name="press" id="x-t">
+                                            <input class="form-control" placeholder="绝对压力值" type="text" name="press"
+                                                   id="x-t">
                                             <span class="input-group-addon">%</span>
                                         </div>
                                     </li>
