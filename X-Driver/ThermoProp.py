@@ -37,8 +37,16 @@ def pt_h(p, t, x):
         [type] -- [description]
     """
     t = t + 273.15  # 转换为绝对温度
-    result = ['', 0, 0, 0, 0]
-    result[0] = Region.get(Region_TP(t, p))  # 水的状态
-    result[1] = "%0.3f" % (t - (IAPWS97(P=p, x=x).T))  # 过热度
-    result[4] = "%0.3f" % (IAPWS97(P=p, T=t).h)  # 焓值
+    result = [0, 0]
+    # result[0] = Region.get(Region_TP(t, p))  # 水的状态
+    result[0] = "%0.3f" % (t - (IAPWS97(P=p, x=x).T))  # 过热度
+    result[1] = "%0.3f" % (IAPWS97(P=p, T=t).h)  # 焓值
     return json.dumps(result, ensure_ascii=False)
+
+def main():
+    server = hprose.HttpServer(port=8181)
+    server.addFunction(pt_h)
+    server.start()
+
+if __name__ == '__main__':
+    main()

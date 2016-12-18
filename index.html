@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Title</title>
+    <title>热力性质计算</title>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
     <script src="js/catclaw.js" type="text/javascript"></script>
@@ -188,24 +188,24 @@
                                                 <!--设定计算类型-->
                                                 <input type="hidden" name="calc_type" value="h">
                                                 <label class="input-group-addon">温度</label>
-                                                <input class="form-control" placeholder="摄氏度" type="text" name="temp"
-                                                       id="temp-h">
+                                                <input class="form-control" placeholder="摄氏度" type="text" name="temp_h"
+                                                       id="temp_h">
                                                 <span class="input-group-addon"> &#8451</span>
                                             </div>
                                         </li>
                                         <li class="list-group-item">
                                             <div class="input-group">
                                                 <label class="input-group-addon">压力</label>
-                                                <input class="form-control" placeholder="绝对压力值" type="text" name="press"
-                                                       id="press-h">
+                                                <input class="form-control" placeholder="绝对压力值" type="text" name="press_h"
+                                                       id="press_h">
                                                 <span class="input-group-addon">MPa.a</span>
                                             </div>
                                         </li>
                                         <li class="list-group-item">
                                             <div class="input-group">
                                                 <label class="input-group-addon">干度</label>
-                                                <input class="form-control" placeholder="绝对压力值" type="text" name="press"
-                                                       id="x-h">
+                                                <input class="form-control" placeholder="绝对压力值" type="text" name="x_h"
+                                                       id="x_h">
                                                 <span class="input-group-addon">%</span>
                                             </div>
                                         </li>
@@ -214,7 +214,7 @@
                                 <br>
 
                                 <div class="panel-footer">
-                                    <a class="btn btn-lg btn-block btn-success" id="calc_h">计算</a>
+                                    <button class="btn btn-lg btn-block btn-success" id="calc_h">计算</button>
                                 </div>
                             </form>
                         </div>
@@ -229,6 +229,7 @@
                                     <label id="result_h">$0</label> &nbsp <label>MPa.a</label>
                                 </p>
                             </div>
+                            <form class="form-horizontal" action="test.php" method="GET" id="calc_p_form">
                             <ul class="list-group list-group-flush text-center">
                                 <!-- Appended input-->
                                 <div class="controls">
@@ -236,7 +237,7 @@
                                         <div class="input-group">
                                             <input type="hidden" name="calc_type" value="all">
                                             <label class="input-group-addon">温度</label>
-                                            <input class="form-control" placeholder="摄氏度" type="text" name="temp"
+                                            <input class="form-control" placeholder="摄氏度" type="text" name="temp-p"
                                                    id="temp-p">
                                             <span class="input-group-addon"> &#8451</span>
                                         </div>
@@ -244,15 +245,15 @@
                                     <li class="list-group-item">
                                         <div class="input-group">
                                             <label class="input-group-addon">压力</label>
-                                            <input class="form-control" placeholder="绝对压力值" type="text" name="press"
-                                                   id="disabledTextInput" disabled>
+                                            <input class="form-control" placeholder="绝对压力值" type="text" name="press_p"
+                                                   id="disabledTextInput_p" disabled>
                                             <span class="input-group-addon">MPa.a</span>
                                         </div>
                                     </li>
                                     <li class="list-group-item">
                                         <div class="input-group">
                                             <label class="input-group-addon">干度</label>
-                                            <input class="form-control" placeholder="绝对压力值" type="text" name="press"
+                                            <input class="form-control" placeholder="绝对压力值" type="text" name="x_p"
                                                    id="x-p">
                                             <span class="input-group-addon">%</span>
                                         </div>
@@ -262,8 +263,10 @@
                             </ul>
                             <br>
                             <div class="panel-footer">
-                                <a class="btn btn-lg btn-block btn-info">Purchase</a>
+                                <button class="btn btn-lg btn-block btn-info">Purchase</button>
+                                <input class="btn btn-lg btn-block btn-info" type="submit" value="提交">
                             </div>
+                            </form>
                         </div>
                     </div>
                     <div class="col-md-4">

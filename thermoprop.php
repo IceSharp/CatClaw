@@ -1,11 +1,3 @@
-/** 
-* calculate.php
-* 
-* 热力计算模块
-* @author      Robin
-* @version     1.0
-*/
-
 <?php
 require_once 'hprose/Hprose.php';
 
@@ -24,7 +16,7 @@ switch ($_GET["calc_type"])
     echo $client->sat_P(floatval($_GET["temp"]), floatval($_GET["quality"]));
     break;
     case 'h':
-    echo $client->prop_sw(floatval($_GET["press-h"]), floatval($_GET["temp-h"]));
+    echo $client->pt_h(floatval($_GET["press_h"]), floatval($_GET["temp_h"]), floatval($_GET["x_h"]));
     break;
     default:
     echo "Error";
